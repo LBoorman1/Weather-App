@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <title>Weather Applet</title>
+</head>
+<body>
+    <div class="card">
+        <h1 class="header">Weather Applet</h1>
+        <form class="search" name="locationSearch" id="locationSearch">
+            <input type="text" class="locationSearch" id="location" placeholder="Enter a location">
+            <div class="searchIconHolder">
+                <i class="material-icons">search</i>
+            </div>
+        </form>
+
+        <div class="infoContainer">
+            <!-- Hidden until the API returns a valid response -->
+            <!-- Big temperature information -->
+            <div class="temperatureInfo">
+                <h1 id="locationName"></h1>
+                <div class="temperature">
+                    <i class="material-icons">device_thermostat</i>
+                    <span id="temperatureValue"></span>
+                </div>
+                
+            </div>
+
+            <div class="additionalInfo">
+                <div class="windSpeed">
+                    <i class="material-icons">air</i>
+                    <span id="windSpeedValue"></span>
+                </div>
+                <div class="humidity">
+                    <i class="material-icons">waves</i>
+                    <span id="humidityValue"></span>
+                </div>
+            </div>
+            <!-- Hidden unless the API returns an error -->
+        </div>
+        <div class="error">
+            <i class="material-icons">fmd_bad</i>
+            <h1>The location you entered does not exist</h1>
+        </div>
+    </div>
+    <script type="module" src="index.js"></script>
+    <script src="./node_modules/axios/dist/axios.min.js"></script>
+</body>
+</html>
